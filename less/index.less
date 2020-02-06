@@ -52,8 +52,107 @@ table {
 * {
     box-sizing: border-box;
 }
+//mix ins
+.flex(){
+	display: flex;
+}
+//variables
+@flex 
 
 html, body {
-    height: 100%;
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	background: black;
+}
+.container {
+	width: 90%;
+	background: rgb(42, 72, 102);
+	margin: 0 auto;
+}
+.navigation {
+	width:100vw;
+	height: 3.5rem;
+	.flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background: slategray;
+	position: fixed;
+
+	nav {
+		.flex;
+		justify-content: space-evenly;
+		align-content: center;
+		padding-bottom: 2rem;
+		flex-direction: row;
+
+	}
+
+	a {
+		text-decoration: none;
+		color: white;
+		font-weight: 400;
+		font-size: 2.4rem;
+		padding: 2rem;
+		align-items: flex-start;
+	}
+
+
+}
+.top {
+	.flex;
+	height: 50vh;
+	width: 40%;
+	padding: 1.4rem;
+	margin: 0 auto;
+	background: lightblue;
+	align-items: left; 
+
+	img {
+		padding-top:3rem;
+		height: 40%;
+		width: 20%;
+		text-align: flex-start
+	}
+	div {
+		padding-top: 5rem;
+	}
+	h1 {
+		font-size:2rem;
+		
+	}
+	p {
+		padding-top: 3rem;
+	}
 }
 
+.middle {
+	width: 100%;
+	height: 50rem;
+	.flex;
+	flex-direction: column;
+	margin: 0 auto;
+	background: teal;
+	font-size: 1.8rem;
+	
+
+	.part_a{
+		.flex;
+		flex-direction: row;
+		justify-content: space-between;
+		height: 40%;
+		width: 100%;
+
+	}
+}
+
+.footer {
+
+}
