@@ -57,102 +57,199 @@ table {
 	display: flex;
 }
 //variables
-@flex 
+@tablet: ~"only screen and (max-width: 900px)";
+@mobile: ~"only screen and (max width: 600px)";
 
+//imports
+// @imports "media-break";
+
+// main CSS
 html, body {
-	height: 100%;
+	height: 300vh;
 	width: 100%;
 	padding: 10px;
 	font-weight: 300;
 	line-height: 1.75em;
-}
+	background: linear-gradient(45deg,gray, blue, white);
+	background-repeat: no-repeat;
+	background-size: cover;
 html {
 	font-size: 62.5%;
 }
-body {
-	background: black;
-}
+
 .container {
 	width: 90%;
-	background: rgb(42, 72, 102);
+	
+	
 	margin: 0 auto;
-}
-.navigation {
-	width:100vw;
-	height: 3.5rem;
-	.flex;
+	.flex();
 	flex-direction: row;
-	justify-content: space-evenly;
-	background: slategray;
-	position: fixed;
+	}
 
-	nav {
-		.flex;
+	.navigation {
+		height:100vh;
+		width: 12%;
+		.flex();
 		justify-content: space-evenly;
 		align-content: center;
-		padding-bottom: 2rem;
-		flex-direction: row;
+		border: 1px dotted black;
+		position: fixed;
+		padding-left: 2rem;
+		background: #47f9ff;
+
+		nav {
+			.flex;
+			justify-content: space-evenly;
+			align-content: center;
+			flex-direction: column;
+			
+			@media @mobile {
+				flex-direction: row;
+				width: 100vw;
+				height: 5vh;
+			}
+
+		}
+
+		a {
+			text-decoration: none;
+			color: white;
+			font-weight: 400;
+			font-size: 2rem;
+			padding: .5rem;
+			margin: 0 auto;
+			align-items: center;
+			border: 2px solid red;
+
+			@media @mobile {
+				font-size: 1.5rem;
+				align-items: center;
+			}
+		}
+
 
 	}
-
-	a {
-		text-decoration: none;
-		color: white;
-		font-weight: 400;
-		font-size: 2.4rem;
-		padding: 2rem;
-		align-items: flex-start;
+	// header with picture
+	.top {
+		.flex();
+		height: 30rem;
+		width: 50%;
+		padding: 1.4rem;
+		margin: 0 auto;
+		background: lightblue;
+		align-items: left; 
 	}
-
-
-}
-.top {
-	.flex;
-	height: 50vh;
-	width: 40%;
-	padding: 1.4rem;
-	margin: 0 auto;
-	background: lightblue;
-	align-items: left; 
-
-	img {
-		padding-top:3rem;
-		height: 40%;
-		width: 20%;
-		text-align: flex-start
-	}
-	div {
-		padding-top: 5rem;
-	}
-	h1 {
-		font-size:2rem;
-		
-	}
-	p {
-		padding-top: 3rem;
-	}
-}
-
-.middle {
-	width: 100%;
-	height: 50rem;
-	.flex;
-	flex-direction: column;
-	margin: 0 auto;
-	background: teal;
-	font-size: 1.8rem;
-	
-
-	.part_a{
-		.flex;
+	header {
+		.flex();
 		flex-direction: row;
 		justify-content: space-between;
-		height: 40%;
-		width: 100%;
-
+		
+		img {
+			padding-top:3rem;
+			padding-bottom: 12rem;
+			height: auto;
+			width: 30%;
+			text-align: flex-start;
+		}
+		div {
+			.flex();
+			padding-top: 5rem;
+			padding-left: 1.5rem;
+			align-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		h1 {
+			font-size:2rem;
+			
+		}
+		p {
+			padding-top: 3rem;
+		}
 	}
-}
+	.middle {
+		width: 50%;
+		height: 50rem;
+		.flex;
+		flex-direction: column;
+		margin: 0 auto;
+		background: teal;
+		font-size: 1.8rem;
+		
+		.part_a{
+			.flex;
+			flex-direction: row;
+			justify-content: space-between;
+			height: 40%;
+			width: 100%;
+			text-align: left;
+			
+			.skills {
+				padding:2rem;
+				h2 {
+					font-size: 2rem;
+					font-weight: 500;
+					border-bottom: 1px solid gray;
+					text-align: center;
+				}
+				p {
+					padding-top: 3rem;
+				}
 
-.footer {
+			}
+			.school {
+				padding: 2rem;
+				h2 {
+					font-size: 2rem;
+					font-weight: 500;
+					border-bottom: 1px solid gray;
+					text-align: center;
+				}
+				p {
+					padding-top: 2rem;
+				}
+				}
+			
+		} // end of part_a
+		.part_b{
+			border-top: 2px solid black;
+			.flex;
+			flex-direction: row;
+			justify-content: space-between;
+			height: 40%;
+			width: 100%;
+			text-align: center;
+			padding-top: 3rem;
+		}
+		.past {
+			margin: 0 auto;
+			text-align: center;
+			padding: 1rem;
+			.flex;
+			justify-items: center;
+			flex-direction: column;
 
+			h2 {
+				font-size: 2rem;
+				padding-bottom: 1rem;
+			}
+
+			th {
+				border: 1px solid black;
+			}
+			td {
+				border: 1px solid black;
+				// background: #1CA9D8;
+			}
+			tr {
+				border: 1px solid black;
+			}
+			.one {
+				background: lightcyan;
+			}
+			#two {
+				font-weight: 500;
+			}
+		} 
+	}
 }

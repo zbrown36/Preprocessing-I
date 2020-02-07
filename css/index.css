@@ -130,74 +130,117 @@ table {
 * {
   box-sizing: border-box;
 }
-@flex html, body {
-  height: 100%;
+html,
+body {
+  height: 300vh;
   width: 100%;
   padding: 10px;
   font-weight: 300;
   line-height: 1.75em;
+  background: linear-gradient(45deg, gray, blue, white);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-html {
+html html,
+body html {
   font-size: 62.5%;
 }
-body {
-  background: black;
-}
-.container {
+html .container,
+body .container {
   width: 90%;
-  background: #2a4866;
   margin: 0 auto;
-}
-.navigation {
-  width: 100vw;
-  height: 3.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  background: slategray;
-  position: fixed;
 }
-.navigation nav {
+html .navigation,
+body .navigation {
+  height: 100vh;
+  width: 12%;
   display: flex;
   justify-content: space-evenly;
   align-content: center;
-  padding-bottom: 2rem;
-  flex-direction: row;
+  border: 1px dotted black;
+  position: fixed;
+  padding-left: 2rem;
+  background: #47f9ff;
 }
-.navigation a {
+html .navigation nav,
+body .navigation nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-direction: column;
+}
+@media only screen and (max width: 600px) {
+  html .navigation nav,
+  body .navigation nav {
+    flex-direction: row;
+    width: 100vw;
+    height: 5vh;
+  }
+}
+html .navigation a,
+body .navigation a {
   text-decoration: none;
   color: white;
   font-weight: 400;
-  font-size: 2.4rem;
-  padding: 2rem;
-  align-items: flex-start;
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  align-items: center;
+  border: 2px solid red;
 }
-.top {
+@media only screen and (max width: 600px) {
+  html .navigation a,
+  body .navigation a {
+    font-size: 1.5rem;
+    align-items: center;
+  }
+}
+html .top,
+body .top {
   display: flex;
-  height: 50vh;
-  width: 40%;
+  height: 30rem;
+  width: 50%;
   padding: 1.4rem;
   margin: 0 auto;
   background: lightblue;
   align-items: left;
 }
-.top img {
+html header,
+body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+html header img,
+body header img {
   padding-top: 3rem;
-  height: 40%;
-  width: 20%;
+  padding-bottom: 12rem;
+  height: auto;
+  width: 30%;
   text-align: flex-start;
 }
-.top div {
+html header div,
+body header div {
+  display: flex;
   padding-top: 5rem;
+  padding-left: 1.5rem;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.top h1 {
+html header h1,
+body header h1 {
   font-size: 2rem;
 }
-.top p {
+html header p,
+body header p {
   padding-top: 3rem;
 }
-.middle {
-  width: 100%;
+html .middle,
+body .middle {
+  width: 50%;
   height: 50rem;
   display: flex;
   flex-direction: column;
@@ -205,10 +248,87 @@ body {
   background: teal;
   font-size: 1.8rem;
 }
-.middle .part_a {
+html .middle .part_a,
+body .middle .part_a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 40%;
   width: 100%;
+  text-align: left;
+}
+html .middle .part_a .skills,
+body .middle .part_a .skills {
+  padding: 2rem;
+}
+html .middle .part_a .skills h2,
+body .middle .part_a .skills h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  border-bottom: 1px solid gray;
+  text-align: center;
+}
+html .middle .part_a .skills p,
+body .middle .part_a .skills p {
+  padding-top: 3rem;
+}
+html .middle .part_a .school,
+body .middle .part_a .school {
+  padding: 2rem;
+}
+html .middle .part_a .school h2,
+body .middle .part_a .school h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  border-bottom: 1px solid gray;
+  text-align: center;
+}
+html .middle .part_a .school p,
+body .middle .part_a .school p {
+  padding-top: 2rem;
+}
+html .middle .part_b,
+body .middle .part_b {
+  border-top: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40%;
+  width: 100%;
+  text-align: center;
+  padding-top: 3rem;
+}
+html .middle .past,
+body .middle .past {
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+}
+html .middle .past h2,
+body .middle .past h2 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+html .middle .past th,
+body .middle .past th {
+  border: 1px solid black;
+}
+html .middle .past td,
+body .middle .past td {
+  border: 1px solid black;
+}
+html .middle .past tr,
+body .middle .past tr {
+  border: 1px solid black;
+}
+html .middle .past .one,
+body .middle .past .one {
+  background: lightcyan;
+}
+html .middle .past #two,
+body .middle .past #two {
+  font-weight: 500;
 }
